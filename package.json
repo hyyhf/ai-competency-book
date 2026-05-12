@@ -1,0 +1,12 @@
+{
+  "name": "ai-literacy-online",
+  "version": "1.0.0",
+  "description": "AI Literacy Online Textbook",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {}
+}
