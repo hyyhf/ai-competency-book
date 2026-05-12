@@ -4,6 +4,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'AI素养',
   description: '大学生的第一本人工智能启蒙书',
+  base: '/ai-competency-book/',
   head: [
     ['link', { rel: 'icon', href: '/images/book_logo_rb.png', type: 'image/png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -29,6 +30,9 @@ export default defineConfig({
         ]
       },
       { text: '后记', link: '/epilogue' },
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/hyyhf/ai-competency-book' }
     ],
     sidebar: [
       {
