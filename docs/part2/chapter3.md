@@ -79,27 +79,31 @@ title: 第3章 问题定义：比Prompt更重要的能力
 | **格式** | 输出应该长什么样？ | 分为事实、争议焦点、法律适用三部分 |
 | **标准** | 什么算好的输出？ | 要有逻辑推导过程，不要罗列 |
 
-每多覆盖一个要素，AI的输出就多了一层精准度。覆盖六个要素所花的额外时间，通常不超过两三分钟。
 
 ---
 
-<PromptCompare title="Prompt瀵规瘮瀹為獙" badLabel="妯＄硦鎻愰棶" goodLabel="BACS妗嗘灦鎻愰棶" hint="濂界殑闂瀹氫箟鍖呭惈锛欱ackground(鑳屾櫙)銆丄udience(瀵硅薄)銆丆onstraint(绾︽潫)銆丼tandard(鏍囧噯)銆傚鑺变袱鍒嗛挓瀹氫箟闂锛岃兘鑺傜渷浜屽崄鍒嗛挓淇敼缁撴灉銆?>
+<PromptCompare title="Prompt对比实验" badLabel="模糊提问" goodLabel="BACS框架提问" hint="好的问题定义包含：Background(背景)、Audience(对象)、Constraint(约束)、Standard(标准)。多花两分钟定义问题，能节省二十分钟修改结果。">
   <template #bad>
 
-甯垜鍐欎竴浠藉叧浜庢柊鑳芥簮姹借溅鐨勫垎鏋愭姤鍛娿€?
+帮我写一份关于新能源汽车的分析报告。
+
   </template>
   <template #good>
 
-**鑳屾櫙**锛氭垜姝ｅ湪鍑嗗绠＄悊瀛﹁绋嬬殑鏈熸湯浣滀笟锛岄渶瑕佸垎鏋愭瘮浜氳开2023-2025骞寸殑绔炰簤绛栫暐銆?
-**瀵硅薄**锛氳鑰呮槸绠＄悊瀛︽暀鎺堬紝鐔熸倝娉㈢壒浜斿姏鍜孲WOT妗嗘灦銆?
-**绾︽潫**锛?000瀛椾互鍐咃紝闇€瑕佸紩鐢ㄥ叿浣撹储鎶ユ暟鎹紝涓嶈娉涙硾鑰岃皥琛屼笟瓒嬪娍銆?
-**鏍囧噯**锛氳鏈夋槑纭殑璁虹偣锛屾瘡涓鐐圭敤鏁版嵁鏀拺锛岀粨灏剧粰鍑哄彲楠岃瘉鐨勯娴嬨€?
+**背景**：我正在准备管理学课程的期末作业，需要分析比亚迪2023-2025年的竞争策略。
+
+**对象**：读者是管理学教授，熟悉波特五力和SWOT框架。
+
+**约束**：2000字以内，需要引用具体财报数据，不要泛泛而谈行业趋势。
+
+**标准**：要有明确的论点，每个论点用数据支撑，结尾给出可验证的预测。
+
   </template>
 </PromptCompare>
 
 <Quiz
-  question="BACS妗嗘灦涓殑'C'浠ｈ〃浠€涔堬紵"
-  :options="['Content锛堝唴瀹癸級', 'Context锛堜笂涓嬫枃锛?, 'Constraint锛堢害鏉燂級', 'Criteria锛堟爣鍑嗭級']"
-  answer="Constraint锛堢害鏉燂級"
-  explain="BACS妗嗘灦锛欱=Background锛堣儗鏅級銆丄=Audience锛堝璞★級銆丆=Constraint锛堢害鏉燂級銆丼=Standard锛堟爣鍑嗭級銆傜害鏉熷府鍔〢I鐞嗚В杈圭晫锛岄伩鍏嶇敓鎴愭硾娉涜€岃皥鐨勫唴瀹广€?
+  question="BACS框架中的'C'代表什么？"
+  :options="['Content（内容）', 'Context（上下文）', 'Constraint（约束）', 'Criteria（标准）']"
+  answer="Constraint（约束）"
+  explain="BACS框架：B=Background（背景）、A=Audience（对象）、C=Constraint（约束）、S=Standard（标准）。约束帮助AI理解边界，避免生成泛泛而谈的内容。"
 />

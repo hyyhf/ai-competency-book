@@ -1,4 +1,4 @@
----
+﻿---
 title: 第14章 不害怕技术环境：命令行、安装、版本与报错
 ---
 
@@ -123,6 +123,7 @@ git log --oneline -5
 - **不理解的命令不执行**，这是不可妥协的安全底线
 :::
 
+
 ---
 
 <PromptCompare title="鍚慉I姹傚姪鎶ラ敊鐨勬柟寮? badLabel="浣庢晥姹傚姪" goodLabel="鍥涜绱犳眰鍔? hint="鐢?鐜-鎿嶄綔-鏈熸湜-瀹為檯'鍥涜绱犳弿杩伴棶棰橈紝AI缁欏嚭鐨勮В鍐虫柟妗堜細绮惧噯寰楀銆?>
@@ -133,12 +134,12 @@ git log --oneline -5
   </template>
   <template #good>
 
-**鐜**锛歐indows 11锛孭ython 3.11锛屼娇鐢╬ip瀹夎鐨刾andas 2.1.4
+**鐜**锛歐indows 11锛孭ython 3.11锛宲andas 2.1.4
 
 **鎿嶄綔**锛氳繍琛?python analysis.py 璇诲彇CSV鏂囦欢
 
 **鏈熸湜**锛氭甯歌鍙栧苟杈撳嚭鍓?琛屾暟鎹?
-**瀹為檯**锛氭姤閿?UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb5
+**瀹為檯**锛氭姤閿?UnicodeDecodeError
 
   </template>
 </PromptCompare>
