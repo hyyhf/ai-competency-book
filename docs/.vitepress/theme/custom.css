@@ -657,3 +657,28 @@ body,
     border-radius: 8px;
   }
 }
+
+/* --- 侧边栏竖线移除 --- */
+
+/* 导航栏底部细线 */
+.VPNav,
+.VPNavBar,
+.VPNavBar .wrapper,
+.VPNavBar .container {
+  border-bottom: none !important;
+}
+
+/* 侧边栏右边框竖线 */
+.VPSidebar {
+  border-right: none !important;
+}
+
+/* 侧边栏条目左侧的指示器竖线 */
+.VPSidebarItem .indicator {
+  display: none !important;
+}
+
+/* 侧边栏链接项左侧的竖线边框 */
+.VPSidebarItem.level-0 > .items {
+  border-left: none !important;
+}
