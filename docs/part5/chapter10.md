@@ -57,3 +57,31 @@ title: 第10章 文件、文本与数据：AI时代的信息载体
 - **让结构显性化**：用标题、列表、表格替代大段纯文字
 - 给AI准备材料前，检查格式、结构、完整性和标签
 :::
+
+---
+
+<Quiz
+  question="缁橝I鍑嗗鏉愭枡鏃讹紝浠ヤ笅鍝鍋氭硶鏈€鏈夋晥锛?
+  :options="['鎶婃墍鏈夌浉鍏虫枃浠跺叏閮ㄤ涪缁橝I', '鎴浘鍚庤AI鑷繁璇嗗埆鍐呭', '绛涢€夊叧閿潗鏂欙紝鐢ㄦ竻鏅扮殑鏍囩鍜岀粨鏋勭粍缁囧悗鎻愪緵', '鍙敤鍙ｅご鎻忚堪锛屼笉鎻愪緵鍘熷鏉愭枡']"
+  answer="绛涢€夊叧閿潗鏂欙紝鐢ㄦ竻鏅扮殑鏍囩鍜岀粨鏋勭粍缁囧悗鎻愪緵"
+  explain="淇℃伅缁勭粐鐨勬牳蹇冨師鍒欙細鐢ㄦ爣棰樺缓绔嬪眰娆°€佺敤鍒楄〃鏇夸唬闀挎钀姐€佺敤琛ㄦ牸瀵规瘮淇℃伅銆佺粰鏁版嵁鍔犱笂鏍囩銆傜粨鏋勫寲鐨勮緭鍏ユ墠鑳戒骇鍑虹粨鏋勫寲鐨勮緭鍑恒€?
+/>
+
+<PromptCompare title="鏂囦欢鍛藉悕瀵规瘮" badLabel="闅忔剰鍛藉悕" goodLabel="瑙勮寖鍛藉悕" hint="濂界殑鏂囦欢鍛藉悕鏄俊鎭粍缁囩殑绗竴姝ャ€傛弿杩版€у悕绉拌AI鍜屼汉绫婚兘鑳藉揩閫熷畾浣嶅唴瀹广€?>
+  <template #bad>
+
+- 鎶ュ憡.docx
+- 鏂板缓鏂囨。(1).docx
+- final_final_v3.pdf
+- 鎴浘2026.png
+
+  </template>
+  <template #good>
+
+- market_analysis_2024Q3.md
+- 2024-03-15_meeting_notes.md
+- competitor_report_v2_reviewed.pdf
+- dashboard_mobile_wireframe.png
+
+  </template>
+</PromptCompare>
