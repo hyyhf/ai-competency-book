@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitepress'
+import footnote from 'markdown-it-footnote'
 
 export default defineConfig({
+  markdown: {
+    config: (md) => {
+      md.use(footnote)
+    }
+  },
   lang: 'zh-CN',
   title: 'AI素养',
   description: '大学生的第一本人工智能启蒙书',
