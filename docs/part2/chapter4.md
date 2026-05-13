@@ -8,6 +8,22 @@ title: 第4章 Context：会准备工作环境
 本章内容提要：上下文的概念与多层结构 / 同一问题在不同上下文下的答案差异 / 上下文不足与混乱的后果 / Token与上下文窗口 / 长对话失焦 / 如何准备高质量材料包
 </div>
 
+## 图解导读：上下文就是AI的工作台
+
+Context听起来像技术词，其实可以理解成你给AI布置的工作台。背景、目标、材料、约束、示例和输出格式越清楚，AI越像是在一张干净桌面上工作；如果这些信息混在一起，它就只能在一堆纸里猜你的意思。
+
+<figure class="chapter-visual">
+  <img src="/images/ch04_context_layers.png" alt="上下文层次：背景、目标、材料、约束、示例、输出格式" />
+  <figcaption>上下文不是多说几句，而是把工作环境搭起来。</figcaption>
+</figure>
+
+一个好习惯是把材料打成"上下文包"：项目说明告诉它为什么做，原始资料告诉它依据在哪里，评价标准告诉它什么算好，输出样例告诉它最后长什么样。这样，AI不是凭空发挥，而是在你的材料边界内工作。
+
+<figure class="chapter-visual">
+  <img src="/images/ch04_context_package.png" alt="上下文包：项目说明、原始资料、评价标准、输出样例" />
+  <figcaption>材料越有组织，AI越少猜测，输出越可检查。</figcaption>
+</figure>
+
 ## 什么是上下文
 
 ::: tip 定义：上下文（Context）

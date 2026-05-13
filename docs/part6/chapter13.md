@@ -8,6 +8,22 @@ title: 第13章 AI如何长出手脚：工具、协议、技能与自动化
 本章内容提要：模型本身的能力边界 / Tool Use：让AI调用外部能力 / API与Schema / MCP：标准化的工具连接 / Skills、Plugins与Hooks / 权限与最小权限原则 / No-code自动化
 </div>
 
+## 图解导读：工具让AI能做事，权限决定它能做多少
+
+模型本体擅长生成文字；一旦接上工具、技能和插件，它就能搜索网页、读取文件、操作表格、调用服务。所谓"AI长出手脚"，不是模型突然有了魔法，而是它获得了连接外部世界的接口。
+
+<figure class="chapter-visual">
+  <img src="/images/ch13_tool_skill_plugin_map.png" alt="AI通过工具、技能和插件获得外部能力" />
+  <figcaption>工具扩展能力，协议组织连接，权限划定边界。</figcaption>
+</figure>
+
+因此，最小权限原则会变得非常重要。总结文本可以自动执行，发送邮件可能需要确认，删除文件、支付费用、公开发布通常必须禁止或严格审批。不是不信任AI，而是任何会产生现实后果的动作都需要边界。
+
+<figure class="chapter-visual">
+  <img src="/images/ch13_permission_guardrails.png" alt="权限护栏：可自动执行、需确认、禁止执行" />
+  <figcaption>AI越能行动，越要提前画清权限护栏。</figcaption>
+</figure>
+
 ## 模型本身能做什么，不能做什么
 
 一个纯粹的语言模型，能做的事情归结为一件：**根据输入的文字，生成输出的文字**。

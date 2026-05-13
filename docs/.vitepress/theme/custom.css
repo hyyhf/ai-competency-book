@@ -297,6 +297,35 @@ body,
   margin: 2.5rem 0;
 }
 
+/* 章节配图 */
+.vp-doc .chapter-visual {
+  margin: 1.75rem 0 2.25rem;
+  padding: 0.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(247, 243, 234, 0.82)),
+    var(--vp-c-bg-soft);
+  border: 1px solid rgba(185, 137, 69, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(37, 59, 54, 0.08);
+}
+
+.vp-doc .chapter-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(37, 59, 54, 0.1);
+  background-color: #f7f3ea;
+}
+
+.vp-doc .chapter-visual figcaption {
+  margin: 0.75rem 0.25rem 0.15rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
 /* 链接 */
 .vp-doc a {
   color: var(--ai-color-zhe);

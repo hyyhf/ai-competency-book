@@ -8,6 +8,22 @@ title: 第10章 文件、文本与数据：AI时代的信息载体
 本章内容提要：为什么文件格式很重要 / 纯文本的力量 / 常见格式对比 / 什么是AI友好的信息组织 / Markdown：最适合与AI协作的文本格式
 </div>
 
+## 图解导读：信息载体会影响AI理解质量
+
+同样一段内容，放在截图里、表格里、PDF里、Markdown里，AI读到的结构并不一样。文件、文本和数据不是包装问题，而是信息如何被理解、引用、拆解和复用的问题。
+
+<figure class="chapter-visual">
+  <img src="/images/ch10_file_text_data_lanes.png" alt="文件、文本与数据进入AI工作流" />
+  <figcaption>信息载体越清楚，AI越容易做摘要、分析和转换。</figcaption>
+</figure>
+
+把材料交给AI之前，先做一点整理：命名清楚，去掉重复，标明来源，说明用途。这个动作看似琐碎，却能显著减少AI误读、遗漏和凭空补全的概率。
+
+<figure class="chapter-visual">
+  <img src="/images/ch10_material_handoff.png" alt="把混乱材料整理为可用材料包" />
+  <figcaption>整理材料不是文书工作，而是降低协作噪声。</figcaption>
+</figure>
+
 ## 为什么文件格式很重要
 
 你给AI的不只是内容，还有格式。同样的信息，用不同的文件格式承载，AI理解的效果可能天差地别。

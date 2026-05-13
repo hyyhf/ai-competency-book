@@ -8,6 +8,22 @@ title: 第12章 从Chatbot到Agent：AI产品形态如何演化
 本章内容提要：Chatbot -- 回答问题 / Copilot -- 辅助人在任务中工作 / Agent -- 有目标、能调用工具、能多步执行 / Workflow与Automation / Computer Use / 为什么能自动做事的AI更强也更危险 / 如何选择AI工具和模型
 </div>
 
+## 图解导读：AI产品形态变了，人的控制点也要变
+
+Chatbot回答问题，Copilot陪你做事，Agent则可以把目标拆成步骤、调用工具并连续执行。能力越强，越不能只看"它会什么"，还要看"它什么时候需要停下来问人"。
+
+<figure class="chapter-visual">
+  <img src="/images/ch12_chatbot_to_agent_ladder.png" alt="从Chatbot到Agent的能力阶梯" />
+  <figcaption>从问答到自主执行，AI的能力来自更长的任务链。</figcaption>
+</figure>
+
+Agent的典型循环是目标、计划、执行、观察和调整。这个循环很有用，也更需要人类检查点：高风险操作要批准，方向跑偏要停止，最终责任不能交给自动化流程。
+
+<figure class="chapter-visual">
+  <img src="/images/ch12_agent_work_loop.png" alt="Agent工作循环：目标、计划、执行、观察、调整，以及批准和停止" />
+  <figcaption>能自动做事的AI更强，也更需要清楚的人工确认点。</figcaption>
+</figure>
+
 ## Chatbot：一问一答
 
 Chatbot是绝大多数人接触AI的第一站。你输入问题，AI回答。这个模式的核心特征是**反应式交互**：你不问，它不说。

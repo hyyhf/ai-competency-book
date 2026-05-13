@@ -10,6 +10,22 @@ title: 第3章 问题定义：比Prompt更重要的能力
 本章内容提要：为什么模糊的请求注定得到平庸的回答 / 好问题来自清晰目标 / 六种任务类型 / 背景、对象、场景和限制 / 大问题的拆解 / 高质量AI请求的六要素
 </div>
 
+## 图解导读：Prompt之前，先把问题变硬
+
+模糊的请求通常会得到平庸的回答，不是因为AI不努力，而是因为它没有足够清楚的靶心。问题定义做的事情，就是把"帮我分析一下"这类软塌塌的想法，压成目标、对象、场景和标准都清楚的任务。
+
+<figure class="chapter-visual">
+  <img src="/images/ch03_problem_definition_funnel.png" alt="问题定义漏斗：从模糊想法到可执行任务" />
+  <figcaption>好Prompt不是华丽措辞，而是清楚的任务定义。</figcaption>
+</figure>
+
+开始提问前，可以先给自己填一张任务定义卡。它不需要复杂，却能逼你回答几个关键问题：到底要解决什么，交付物是什么，给谁用，已有材料有哪些，按什么标准算好，以及哪些事情不能做。
+
+<figure class="chapter-visual">
+  <img src="/images/ch03_task_definition_card.png" alt="任务定义卡：问题、交付物、对象、材料、标准和禁止事项" />
+  <figcaption>先写清任务定义卡，再让AI进入工作状态。</figcaption>
+</figure>
+
 ::: info 情境案例
 一个正在写毕业论文的营销学研究生打开Claude，输入了一句话：帮我设计一份问卷。Claude给了她一份20道题的问卷，格式规范，看起来可以直接用。她确实直接用了。
 
@@ -159,4 +175,3 @@ Ethan Mollick教授在《Co-Intelligence》中提出了一个实用框架：好�
 [^3]: 黄荣怀, 刘三女牡. (2024). 生成式人工智能在高等教育中的应用与挑战.《开放教育研究》, 30(2), 22-31.
 
 [^4]: Stokes, P. D. (2005). Creativity from Constraints: The Psychology of Breakthrough. Springer.
-

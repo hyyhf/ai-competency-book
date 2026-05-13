@@ -8,6 +8,22 @@ title: 第15章 责任、验证与人的主体性
 本章内容提要：AI输出是待验证材料 / 区分事实、观点、推测和建议 / 要求来源、证据和不确定性 / 伪引用识别 / 学术诚信 / 隐私与数据安全 / 最小权限管理 / 沙箱、日志与可回退 / 人工确认的必要性 / 成为AI时代的主动学习者
 </div>
 
+## 图解导读：采纳AI输出，就是接过责任
+
+AI可以生成建议、草稿、摘要和方案，但它不能替你承担现实后果。只要你把AI输出放进作业、论文、决策或公开发布内容里，责任就已经从模型转移到了你身上。
+
+<figure class="chapter-visual">
+  <img src="/images/ch15_responsibility_triangle.png" alt="责任不外包：AI生成、人类判断、现实后果" />
+  <figcaption>AI生成不等于你可以免责；采纳的一刻，责任就回到人这里。</figcaption>
+</figure>
+
+最后一章的核心动作，是把验证分层：先看格式，再核事实，再复盘逻辑，再评估风险，最后由人确认。这个过程不浪漫，却是AI时代最可靠的主体性训练。
+
+<figure class="chapter-visual">
+  <img src="/images/ch15_verification_layers.png" alt="验证分层：格式检查、事实核验、逻辑复盘、风险评估、人类确认" />
+  <figcaption>验证不是拖慢效率，而是让效率不以失控为代价。</figcaption>
+</figure>
+
 ## AI输出不是结论，而是待验证材料
 
 ::: warning 待验证材料原则
