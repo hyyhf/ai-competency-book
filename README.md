@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/public/images/book_cover3.png" alt="AI素养" width="360" />
+<img src="docs/public/images/book_cover4.png" alt="AI素养" width="600" />
 
 # AI素养：大学生的第一本人工智能启蒙书
 
@@ -47,7 +47,9 @@
 
 ### 第一部分 -- 重新认识AI
 
+<div align="center">
 <img src="docs/public/images/chapter_cover1.png" alt="第一部分" width="600" />
+</div>
 
 先看清AI，再相信AI。它会像专家一样流畅，也会像骗子一样笃定。理解大语言模型的本质是概率推断而非知识检索，认清"流畅不等于正确"的核心陷阱。
 
@@ -56,7 +58,9 @@
 
 ### 第二部分 -- 学会提问
 
+<div align="center">
 <img src="docs/public/images/chapter_cover2.png" alt="第二部分" width="600" />
+</div>
 
 会提问，才会协作。模糊想法要被整理成清晰任务。好的问题定义比任何Prompt技巧都更重要。掌握BACS框架，学会准备上下文和迭代式协作。
 
@@ -66,7 +70,9 @@
 
 ### 第三部分 -- 学会学习
 
+<div align="center">
 <img src="docs/public/images/chapter_cover3.png" alt="第三部分" width="600" />
+</div>
 
 把AI当陪练，不当代练。它应逼你思考，而不是替你思考。用AI深化理解，而不是制造理解的幻觉。
 
@@ -75,7 +81,9 @@
 
 ### 第四部分 -- 学会判断
 
+<div align="center">
 <img src="docs/public/images/chapter_cover4.png" alt="第四部分" width="600" />
+</div>
 
 生成越快，判断越要慢。看起来专业，不等于值得采纳。当生产成本趋近于零，价值从"能做出来"转向"能判断好坏"。
 
@@ -84,7 +92,9 @@
 
 ### 第五部分 -- 学会组织信息
 
+<div align="center">
 <img src="docs/public/images/chapter_cover5.png" alt="第五部分" width="600" />
+</div>
 
 先整理信息，再期待答案。清晰结构是高质量协作的前提。让AI读得懂、找得到、用得对。
 
@@ -93,7 +103,9 @@
 
 ### 第六部分 -- 学会使用工具
 
+<div align="center">
 <img src="docs/public/images/chapter_cover6.png" alt="第六部分" width="600" />
+</div>
 
 学会选工具，而不是追新工具。知道何时用、为何用，比会不会用更重要。从Chatbot到Agent的演化逻辑，Tool Use、MCP与自动化。
 
@@ -102,7 +114,9 @@
 
 ### 第七部分 -- 学会安全行动
 
+<div align="center">
 <img src="docs/public/images/chapter_cover7.png" alt="第七部分" width="600" />
+</div>
 
 先设边界，再让AI行动。权限、隐私、版权与人工确认，是底线。不理解的命令不执行，这是不可妥协的安全原则。
 
@@ -118,6 +132,6 @@
 <br />
 <div align="center">
 
-**AI可以帮你走得更快，但你自己决定走向哪里。**
+**『AI可以帮你走得更快，但你需要自己决定走向哪里』**
 
 </div>

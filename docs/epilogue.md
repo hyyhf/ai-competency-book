@@ -104,7 +104,7 @@ title: 后记
 
 去在这个前所未有的时代里，活出一个只有你自己能活出的故事。
 
-<p style="text-align: right; margin-top: 3em; color: var(--ink-green);">
+<p style="text-align: right; font-family: 'Noto Serif SC', serif; margin-top: 3em; color: var(--ink-green);">
 胡凡<br/>
 2026年5月于武汉
 </p>

@@ -86,12 +86,12 @@ API Key是你调用AI服务的身份凭证。就像银行卡号 -- 它证明你�
 - 怀疑泄露时，**立刻**撤销旧Key并生成新Key
 - 国内AI平台（如百度千帆、阿里百炼）和国际平台（如OpenAI、Anthropic）的Key管理方式类似，但计费规则不同，注意区分
 
-2024年，国内某高校学生因为将API Key上传到了GitHub公开仓库，导致一夜之间被刷掉了2000多元的API费用。这不是个案 -- GitHub上有大量被自动扫描程序发现的泄露Key。
+这不是杞人忧天 -- GitHub官方文档说明，secret scanning 会扫描仓库中的API keys、passwords、tokens等敏感凭据，以便在泄露后及时告警和处理[^1]。也就是说，公开仓库中的Key泄露已经是平台级安全问题。
 :::
 
 ## Git：版本意识与回退能力
 
-Git解决的问题：告别`论文终稿.docx`、`论文终终终稿.docx`的噩梦。
+Git解决的问题：告别`论文终稿.docx`、`论文终终终稿.docx`的噩梦。Pro Git 中文版把版本控制解释为记录文件变化、便于回到特定版本的系统[^2]。
 
 **三个核心概念：**
 
@@ -134,7 +134,7 @@ Git在AI时代有额外的价值：当你让AI修改代码或文件时，如果�
    - **期望**：期望发生什么
    - **实际**：实际发生了什么（附完整错误输出）
 
-> 好的Bug报告是解决问题的一半。很多时候，当你把问题描述清楚的那一刻，你自己就已经发现了答案。这在编程界有个名字叫"小黄鸭调试法" -- 向一只橡皮鸭解释你的问题，往往在解释的过程中你就想到了答案[^1]。
+> 好的Bug报告是解决问题的一半。很多时候，当你把问题描述清楚的那一刻，你自己就已经发现了答案。这在编程界有个名字叫"小黄鸭调试法" -- 向一只橡皮鸭解释你的问题，往往在解释的过程中你就想到了答案。
 
 ## 命令安全
 
@@ -206,4 +206,6 @@ Windows PowerShell: `Get-Location`（查看路径）、`Get-ChildItem`（列出�
 
 **参考文献**
 
-[^1]: Hunt, A. & Thomas, D. (1999). The Pragmatic Programmer. Addison-Wesley. 中译本：《程序员修炼之道》, 电子工业出版社.
+[^1]: GitHub Docs. About secret scanning. https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning
+
+[^2]: Pro Git 中文版. https://progit-cn.github.io/
