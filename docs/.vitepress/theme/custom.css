@@ -430,25 +430,64 @@ body,
 
 /* --- 首页样式 --- */
 
+/* 隐藏默认 hero 和 features，使用自定义组件替代 */
+.VPHome .VPHero {
+  display: none !important;
+}
+
+.VPHome .VPFeatures {
+  display: none !important;
+}
+
 /* Hero 区域 */
 .VPHome .VPHero {
-  padding: 200px 24px 64px;
+  padding: 140px 24px 80px;
+  position: relative;
+}
+
+/* Hero 背景装饰 */
+.VPHome .VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(185, 137, 69, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(37, 59, 54, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .VPHome .VPHero .image-container {
-  max-width: 520px !important;
-  max-height: 520px !important;
+  max-width: 420px !important;
+  max-height: 420px !important;
 }
 
 .VPHome .VPHero .image-container .image-bg {
   transform: none !important;
+  background-image: linear-gradient(
+    135deg,
+    rgba(185, 137, 69, 0.15) 0%,
+    rgba(37, 59, 54, 0.1) 50%,
+    rgba(185, 137, 69, 0.08) 100%
+  ) !important;
+  filter: blur(68px) !important;
 }
 
 .VPHome .VPHero .image-container img {
-  max-width: 500px !important;
-  max-height: 500px !important;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(37, 59, 54, 0.15);
+  max-width: 400px !important;
+  max-height: 400px !important;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 60px rgba(37, 59, 54, 0.18),
+    0 0 0 1px rgba(185, 137, 69, 0.08);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.VPHome .VPHero .image-container:hover img {
+  transform: scale(1.02);
 }
 
 .VPHome .name {
@@ -460,82 +499,64 @@ body,
 
 .VPHome .text {
   font-family: 'Noto Serif SC', serif !important;
-  font-size: 1.6rem !important;
+  font-size: 1.5rem !important;
   color: var(--ai-color-mo) !important;
   font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .VPHome .tagline {
   font-family: 'Noto Sans SC', sans-serif !important;
-  font-size: 1.1rem !important;
+  font-size: 1.05rem !important;
   color: var(--vp-c-text-2) !important;
-  line-height: 1.8;
+  line-height: 1.9;
+  max-width: 480px;
 }
 
 /* Hero 按钮 */
 .VPHome .VPButton.brand {
-  background-color: var(--ai-color-zhe) !important;
-  border-color: var(--ai-color-zhe) !important;
+  background: linear-gradient(135deg, var(--ai-color-zhe) 0%, #a87a3d 100%) !important;
+  border: none !important;
   color: #fff !important;
   font-family: 'Noto Sans SC', sans-serif;
   font-weight: 500;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 0 28px;
+  height: 44px;
+  font-size: 0.95rem;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(185, 137, 69, 0.25);
 }
 
 .VPHome .VPButton.brand:hover {
-  background-color: #a87a3d !important;
-  border-color: #a87a3d !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(185, 137, 69, 0.35);
+  background: linear-gradient(135deg, #a87a3d 0%, #976c35 100%) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(185, 137, 69, 0.35);
 }
 
 .VPHome .VPButton.alt {
   background-color: transparent !important;
-  border: 2px solid var(--ai-color-mo) !important;
+  border: 1.5px solid var(--ai-color-mo) !important;
   color: var(--ai-color-mo) !important;
   font-family: 'Noto Sans SC', sans-serif;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 0 28px;
+  height: 44px;
+  font-size: 0.95rem;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .VPHome .VPButton.alt:hover {
   background-color: var(--ai-color-mo) !important;
   color: #fff !important;
-  transform: translateY(-2px);
-}
-
-/* Features 卡片 */
-.VPFeature {
-  border: 1px solid var(--ai-color-wu) !important;
-  border-radius: 12px !important;
-  background-color: var(--vp-c-bg-elv) !important;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-.VPFeature:hover {
-  border-color: var(--ai-color-zhe) !important;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(37, 59, 54, 0.1);
-}
-
-.VPFeature .title {
-  font-family: 'Noto Serif SC', serif !important;
-  font-weight: 700 !important;
-  color: var(--ai-color-mo) !important;
-  font-size: 1.05rem !important;
-}
-
-.VPFeature .details {
-  font-size: 0.88rem !important;
-  line-height: 1.7 !important;
-  color: var(--vp-c-text-2) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 59, 54, 0.2);
 }
 
 /* hero 图片 */
 .VPImage.image-src {
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(37, 59, 54, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(37, 59, 54, 0.18);
 }
 
 /* --- 页脚 --- */

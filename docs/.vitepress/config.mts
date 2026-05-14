@@ -12,7 +12,7 @@ export default defineConfig({
   description: '大学生的第一本人工智能启蒙书',
   base: '/ai-competency-book/',
   head: [
-    ['link', { rel: 'icon', href: '/images/book_logo_rb.png', type: 'image/png' }],
+    ['link', { rel: 'icon', href: '/ai-competency-book/images/book_logo_rb.png', type: 'image/png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap', rel: 'stylesheet' }],
