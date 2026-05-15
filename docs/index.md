@@ -6,7 +6,7 @@ titleTemplate: false
 hero:
   name: AI素养
   text: 大学生的第一本人工智能启蒙书
-  tagline: AI时代，答案不再稀缺。真正稀缺的是提出好问题、组织好信息、判断好结果、承担好责任的人。
+  tagline: AI时代，答案不再稀缺。真正稀缺的，是穿透答案去追问本质的眼光，是在众声喧哗中守住立场的定力，是把碎片锻造成作品的手艺，是敢于为每一个选择落笔签名的担当。
   image:
     src: /images/book_cover3.png
     alt: AI素养

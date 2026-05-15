@@ -1,7 +1,9 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, inject, onMounted } from 'vue'
 
 const visible = ref(false)
+const openCinematic = inject('openCinematic', () => {})
+let hoverTimer = null
 
 onMounted(() => {
   setTimeout(() => { visible.value = true }, 100)
@@ -76,6 +78,17 @@ const parts = [
 function withBase(path) {
   return '/ai-competency-book' + path
 }
+
+function onCardEnter(index) {
+  clearTimeout(hoverTimer)
+  hoverTimer = setTimeout(() => {
+    openCinematic(index)
+  }, 600)
+}
+
+function onCardLeave() {
+  clearTimeout(hoverTimer)
+}
 </script>
 
 <template>
@@ -93,6 +106,8 @@ function withBase(path) {
         :href="withBase(part.link)"
         class="feature-card"
         :style="{ '--delay': index * 80 + 'ms' }"
+        @mouseenter="onCardEnter(index)"
+        @mouseleave="onCardLeave"
       >
         <!-- Floating cover image: breaks out of card on hover -->
         <div class="card-cover-float">

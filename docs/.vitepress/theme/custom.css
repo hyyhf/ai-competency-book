@@ -313,7 +313,7 @@ body,
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid rgba(37, 59, 54, 0.1);
   background-color: #f7f3ea;
 }

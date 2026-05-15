@@ -1,5 +1,10 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, inject, onMounted, onUnmounted } from 'vue'
+import TrueFocus from './TrueFocus.vue'
+import Typewriter from './Typewriter.vue'
+
+const openCinematic = inject('openCinematic', () => {})
+let heroTimer = null
 
 const loaded = ref(false)
 
@@ -9,8 +14,33 @@ onMounted(() => {
   })
 })
 
+onUnmounted(() => {
+  clearTimeout(heroTimer)
+})
+
+const taglinePhrases = [
+  'AI时代，',
+  '答案不再稀缺。',
+  '真正稀缺的，',
+  '是穿透答案去追问本质的眼光，',
+  '是在众声喧哗中守住立场的定力，',
+  '是把碎片锻造成作品的手艺，',
+  '是敢于为每一个选择落笔签名的担当。'
+]
+
 function withBase(path) {
   return '/ai-competency-book' + path
+}
+
+function onBookEnter() {
+  clearTimeout(heroTimer)
+  heroTimer = setTimeout(() => {
+    openCinematic(0, 'mosaic')
+  }, 200)
+}
+
+function onBookLeave() {
+  clearTimeout(heroTimer)
 }
 </script>
 
@@ -29,8 +59,19 @@ function withBase(path) {
         <h1 class="hero-name">
           <span class="name-char" style="--i:0">A</span><span class="name-char" style="--i:1">I</span><span class="name-char" style="--i:2">素</span><span class="name-char" style="--i:3">养</span>
         </h1>
-        <p class="hero-subtitle">大学生的第一本人工智能启蒙书</p>
-        <p class="hero-tagline">AI时代，答案不再稀缺。真正稀缺的是提出好问题、组织好信息、判断好结果、承担好责任的人。</p>
+        <p class="hero-subtitle">
+          <Typewriter text="大学生的第一本人工智能启蒙书" :type-speed="130" :delete-speed="50" :pause-after-type="3000" :pause-after-delete="600" />
+        </p>
+        <div class="hero-tagline">
+          <TrueFocus
+            :phrases="taglinePhrases"
+            :manual-mode="true"
+            :blur-amount="1.5"
+            border-color="#B98945"
+            glow-color="rgba(185, 137, 69, 0.45)"
+            :animation-duration="0.35"
+          />
+        </div>
         <div class="hero-actions">
           <a :href="withBase('/preface')" class="btn-primary">开始阅读</a>
           <a :href="withBase('/part1/chapter1')" class="btn-secondary">查看目录</a>
@@ -40,10 +81,20 @@ function withBase(path) {
       <!-- Right: Book cover -->
       <div class="hero-visual">
         <div class="book-stage">
-          <!-- Decorative ring -->
-          <div class="orbit-ring"></div>
-          <!-- The book image with animated gradient border -->
-          <div class="book-frame">
+          <!-- Aurora background blobs -->
+          <div class="aurora">
+            <div class="aurora-blob a1"></div>
+            <div class="aurora-blob a2"></div>
+            <div class="aurora-blob a3"></div>
+            <div class="aurora-blob a4"></div>
+            <div class="aurora-blob a5"></div>
+          </div>
+          <!-- The book image -->
+          <div
+            class="book-frame"
+            @mouseenter="onBookEnter"
+            @mouseleave="onBookLeave"
+          >
             <img :src="withBase('/images/book_cover3.png')" alt="AI素养" />
           </div>
           <!-- Floating accent particles -->
@@ -199,12 +250,8 @@ function withBase(path) {
 }
 
 .hero-tagline {
-  font-family: 'Noto Sans SC', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: var(--vp-c-text-2, #3d5a53);
   margin: 0 0 2rem;
-  max-width: 460px;
+  max-width: 520px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.7s ease 0.9s;
@@ -300,38 +347,123 @@ function withBase(path) {
   justify-content: center;
 }
 
-/* Orbit ring */
-.orbit-ring {
+/* ========================================
+   Aurora background behind book
+   ======================================== */
+.aurora {
   position: absolute;
-  width: 560px;
-  height: 560px;
-  top: 50%;
-  left: 50%;
-  margin-top: -280px;
-  margin-left: -280px;
-  border: 1.5px dashed rgba(185, 137, 69, 0.15);
-  border-radius: 50%;
-  animation: orbitSpin 40s linear infinite;
+  inset: -40px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
   opacity: 0;
-  transition: opacity 1s ease 0.5s;
+  transition: opacity 1.2s ease 0.3s;
 }
 
-.loaded .orbit-ring {
+.loaded .aurora {
   opacity: 1;
 }
 
-@keyframes orbitSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  mix-blend-mode: normal;
+  will-change: transform, opacity;
 }
 
-/* Book frame - animated gradient border */
+.a1 {
+  width: 450px;
+  height: 380px;
+  top: -20%;
+  left: -5%;
+  background: radial-gradient(ellipse, rgba(185, 137, 69, 0.4) 0%, rgba(185, 137, 69, 0) 70%);
+  animation: auroraDrift1 8s ease-in-out infinite;
+}
+
+.a2 {
+  width: 400px;
+  height: 450px;
+  bottom: -15%;
+  right: -10%;
+  background: radial-gradient(ellipse, rgba(37, 59, 54, 0.35) 0%, rgba(37, 59, 54, 0) 70%);
+  animation: auroraDrift2 10s ease-in-out infinite;
+}
+
+.a3 {
+  width: 380px;
+  height: 340px;
+  top: 20%;
+  right: -15%;
+  background: radial-gradient(ellipse, rgba(185, 137, 69, 0.28) 0%, rgba(185, 137, 69, 0) 70%);
+  animation: auroraDrift3 12s ease-in-out infinite;
+}
+
+.a4 {
+  width: 360px;
+  height: 400px;
+  bottom: 5%;
+  left: -10%;
+  background: radial-gradient(ellipse, rgba(168, 122, 61, 0.3) 0%, transparent 70%);
+  animation: auroraDrift4 9s ease-in-out infinite;
+}
+
+.a5 {
+  width: 300px;
+  height: 300px;
+  top: 5%;
+  left: 35%;
+  background: radial-gradient(ellipse, rgba(215, 210, 198, 0.35) 0%, transparent 70%);
+  animation: auroraDrift5 11s ease-in-out infinite;
+}
+
+@keyframes auroraDrift1 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  20%  { transform: translate(80px, 40px) scale(1.3); opacity: 1; }
+  40%  { transform: translate(30px, 100px) scale(0.85); opacity: 0.6; }
+  60%  { transform: translate(-60px, 60px) scale(1.15); opacity: 0.9; }
+  80%  { transform: translate(-30px, -20px) scale(1.35); opacity: 0.7; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+
+@keyframes auroraDrift2 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  25%  { transform: translate(-70px, -80px) scale(1.25); opacity: 1; }
+  50%  { transform: translate(50px, -40px) scale(0.8); opacity: 0.5; }
+  75%  { transform: translate(-40px, 60px) scale(1.3); opacity: 0.9; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+}
+
+@keyframes auroraDrift3 {
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.7; }
+  30%  { transform: translate(-90px, 70px) scale(1.35) rotate(8deg); opacity: 1; }
+  50%  { transform: translate(-40px, 110px) scale(0.75) rotate(-3deg); opacity: 0.5; }
+  70%  { transform: translate(60px, -50px) scale(1.2) rotate(5deg); opacity: 0.85; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.7; }
+}
+
+@keyframes auroraDrift4 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.75; }
+  35%  { transform: translate(100px, -70px) scale(1.4); opacity: 0.5; }
+  65%  { transform: translate(-50px, 50px) scale(0.8); opacity: 1; }
+  85%  { transform: translate(60px, 80px) scale(1.2); opacity: 0.6; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.75; }
+}
+
+@keyframes auroraDrift5 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  25%  { transform: translate(-60px, 80px) scale(1.4); opacity: 1; }
+  50%  { transform: translate(40px, 50px) scale(0.7); opacity: 0.4; }
+  75%  { transform: translate(70px, -40px) scale(1.3); opacity: 0.9; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+}
+
+/* ========================================
+   Book frame
+   ======================================== */
 .book-frame {
   position: relative;
   z-index: 2;
-  padding: 3px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--ai-color-wu, #D7D2C6), var(--ai-color-wu, #D7D2C6));
   opacity: 0;
   transform: translateY(40px) scale(0.9);
   transition: opacity 0.8s ease 0.4s, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
@@ -344,71 +476,18 @@ function withBase(path) {
   animation: bookFloat 5s ease-in-out 1.5s infinite;
 }
 
-/* Spinning gradient glow behind the book */
-.book-frame::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 20px;
-  background: conic-gradient(
-    from 0deg,
-    var(--ai-color-zhe, #B98945),
-    var(--ai-color-mo, #253B36),
-    var(--ai-color-wu, #D7D2C6),
-    var(--ai-color-zhe, #B98945),
-    transparent,
-    var(--ai-color-mo, #253B36),
-    var(--ai-color-zhe, #B98945)
-  );
-  animation: borderSpin 6s linear infinite;
-  z-index: -1;
-  opacity: 0.7;
-  transition: opacity 0.4s ease;
-}
-
-.book-frame:hover::before {
-  opacity: 1;
-}
-
-/* Soft outer glow pulse */
-.book-frame::after {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 24px;
-  background: conic-gradient(
-    from 180deg,
-    var(--ai-color-zhe, #B98945),
-    transparent,
-    var(--ai-color-mo, #253B36),
-    transparent,
-    var(--ai-color-zhe, #B98945)
-  );
-  animation: borderSpin 6s linear infinite reverse;
-  z-index: -2;
-  opacity: 0.15;
-  filter: blur(12px);
-}
-
-@keyframes borderSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 .book-frame img {
   display: block;
   width: 540px;
   max-width: none;
   height: auto;
   object-fit: contain;
-  border-radius: 16px;
-  position: relative;
-  z-index: 1;
+  border-radius: 14px;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .book-frame:hover img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 @keyframes bookFloat {
@@ -509,9 +588,7 @@ function withBase(path) {
   color: var(--ai-color-mo, #253B36) !important;
 }
 
-.dark .orbit-ring {
-  border-color: rgba(212, 168, 90, 0.12);
-}
+
 
 /* ========================================
    Responsive
@@ -552,13 +629,6 @@ function withBase(path) {
   .hero-name {
     font-size: 3.5rem;
   }
-
-  .orbit-ring {
-    width: 420px;
-    height: 420px;
-    margin-top: -210px;
-    margin-left: -210px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -576,13 +646,6 @@ function withBase(path) {
 
   .book-frame img {
     width: 280px;
-  }
-
-  .orbit-ring {
-    width: 320px;
-    height: 320px;
-    margin-top: -160px;
-    margin-left: -160px;
   }
 }
 </style>
