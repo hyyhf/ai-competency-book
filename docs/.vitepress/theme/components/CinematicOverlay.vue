@@ -7,7 +7,8 @@ const props = defineProps({
   mode: { type: String, default: 'slideshow' }, // 'slideshow' | 'mosaic'
   images: { type: Array, default: () => [] },
   titles: { type: Array, default: () => [] },
-  chapters: { type: Array, default: () => [] }
+  chapters: { type: Array, default: () => [] },
+  links: { type: Array, default: () => [] }
 })
 
 const emit = defineEmits(['close'])
@@ -19,7 +20,7 @@ const SLIDE_DURATION = 4000
 // Mosaic presets - asymmetric grid positions
 const mosaicPresets = [
   { top: '3%',  left: '2%',  w: '30%', h: '44%' },
-  { top: '2%',  left: '28%', w: '22%', h: '38%' },
+  { top: '2%',  left: '28%', w: '26%', h: '40%' },
   { top: '3%',  left: '48%', w: '26%', h: '42%' },
   { top: '2%',  left: '72%', w: '26%', h: '40%' },
   { top: '50%', left: '3%',  w: '28%', h: '44%' },
@@ -50,6 +51,15 @@ function close() {
   clearTimeout(autoTimer)
   active.value = false
   setTimeout(() => emit('close'), 500)
+}
+
+function navigate(index) {
+  if (props.links[index]) {
+    close()
+    setTimeout(() => {
+      window.location.href = props.links[index]
+    }, 20)
+  }
 }
 
 watch(() => props.show, (val) => {
@@ -100,12 +110,16 @@ onUnmounted(() => clearTimeout(autoTimer))
               transitionDelay: (i * 0.1) + 's',
               animationDelay: (i * 0.12) + 's'
             }"
+            @click.stop="navigate(i)"
           >
             <img :src="img" :alt="titles[i]" />
             <div class="mosaic-label">
               <span class="label-num">{{ String(i + 1).padStart(2, '0') }}</span>
               <span class="label-title">{{ titles[i] }}</span>
               <span class="label-chap">{{ chapters[i] }}</span>
+              <span class="label-go">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
         </div>
@@ -132,6 +146,10 @@ onUnmounted(() => clearTimeout(autoTimer))
           <div class="info-divider"></div>
           <h3 class="info-title">{{ titles[current] }}</h3>
           <p class="info-chap">{{ chapters[current] }}</p>
+          <button class="info-go" @click.stop="navigate(current)">
+            <span>开始阅读</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
         </div>
 
         <!-- Progress dots -->
@@ -211,7 +229,7 @@ onUnmounted(() => clearTimeout(autoTimer))
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               box-shadow 0.4s ease;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  cursor: default;
+  cursor: pointer;
 }
 
 .active .mosaic-frame {
@@ -285,6 +303,18 @@ onUnmounted(() => clearTimeout(autoTimer))
   font-size: 0.7rem;
   color: rgba(255,255,255,0.5);
   margin-left: auto;
+}
+.label-go {
+  display: flex;
+  align-items: center;
+  color: var(--ai-color-zhe, #B98945);
+  margin-left: 6px;
+  opacity: 0.8;
+  transition: transform 0.25s ease;
+}
+.mosaic-frame:hover .label-go {
+  transform: translateX(3px);
+  opacity: 1;
 }
 
 /* ========================================
@@ -401,6 +431,30 @@ onUnmounted(() => clearTimeout(autoTimer))
   font-size: 0.85rem;
   color: rgba(255,255,255,0.45);
   margin: 0;
+}
+
+.info-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.2rem;
+  padding: 8px 20px;
+  background: var(--ai-color-zhe, #B98945);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.04em;
+}
+
+.info-go:hover {
+  background: #a07838;
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(185, 137, 69, 0.4);
 }
 
 /* Progress dots */

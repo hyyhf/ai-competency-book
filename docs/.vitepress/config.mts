@@ -5,6 +5,10 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(footnote)
+    },
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
     }
   },
   lang: 'zh-CN',

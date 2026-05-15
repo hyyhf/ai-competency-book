@@ -81,7 +81,6 @@ const activeTab = ref('bad')
   color: #253B36;
   font-size: 1rem;
 }
-.dark .compare-label { color: #e8e4da; }
 .compare-tabs {
   display: flex;
   gap: 0;
@@ -100,10 +99,6 @@ const activeTab = ref('bad')
   color: #666;
   font-family: 'Noto Sans SC', sans-serif;
   transition: all 0.2s ease;
-}
-.dark .compare-tab {
-  background: rgba(37, 59, 54, 0.3);
-  color: #aaa;
 }
 .compare-tab.active {
   background: #253B36;
@@ -135,11 +130,50 @@ const activeTab = ref('bad')
   background: rgba(74, 140, 111, 0.08);
   border-radius: 6px;
 }
-.dark .compare-hint { color: #7bc9a4; }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.2s ease;
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+/* Dark mode - must be unscoped to match .dark on html */
+.dark .compare-container {
+  background: linear-gradient(135deg, rgba(37, 59, 54, 0.12), rgba(185, 137, 69, 0.06));
+  border-color: rgba(212, 168, 90, 0.18);
+}
+.dark .compare-icon {
+  background-color: #3a5a52;
+}
+.dark .compare-label {
+  color: #e8e4da;
+}
+.dark .compare-tabs {
+  border-color: rgba(215, 210, 198, 0.2);
+}
+.dark .compare-tab {
+  background: rgba(37, 59, 54, 0.3);
+  color: #aaa;
+}
+.dark .compare-tab.active {
+  background: #3a5a52;
+  color: #fff;
+}
+.dark .compare-panel {
+  color: #d4cfc3;
+}
+.dark .compare-panel.bad {
+  background: rgba(196, 78, 78, 0.08);
+  border-color: rgba(196, 78, 78, 0.25);
+}
+.dark .compare-panel.good {
+  background: rgba(74, 140, 111, 0.08);
+  border-color: rgba(74, 140, 111, 0.25);
+}
+.dark .compare-hint {
+  color: #7bc9a4;
+  background: rgba(74, 140, 111, 0.1);
 }
 </style>

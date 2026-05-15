@@ -27,6 +27,10 @@ const coverChapters = [
   '第 1-2 章', '第 3-5 章', '第 6-7 章', '第 8-9 章',
   '第 10-11 章', '第 12-13 章', '第 14-15 章'
 ]
+const coverLinks = [
+  '/part1/chapter1', '/part2/chapter3', '/part3/chapter6', '/part4/chapter8',
+  '/part5/chapter10', '/part6/chapter12', '/part7/chapter14'
+].map(p => withBase(p))
 
 function openCinematic(startIndex = 0, mode = 'slideshow') {
   cinematicStartIndex.value = startIndex
@@ -60,6 +64,7 @@ provide('openCinematic', openCinematic)
     :images="coverImages"
     :titles="coverTitles"
     :chapters="coverChapters"
+    :links="coverLinks"
     @close="closeCinematic"
   />
 </template>
