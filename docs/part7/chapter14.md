@@ -2,6 +2,8 @@
 title: 第14章 不害怕技术环境：命令行、安装、版本与报错
 ---
 
+<img src="/images/chapter_cover7.png" class="chapter-cover" alt="第七部分 学会安全行动" />
+
 # 不害怕技术环境
 
 <div class="part-intro">

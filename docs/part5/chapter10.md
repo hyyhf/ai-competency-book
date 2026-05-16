@@ -2,6 +2,8 @@
 title: 第10章 文件、文本与数据：AI时代的信息载体
 ---
 
+<img src="/images/chapter_cover5.png" class="chapter-cover" alt="第五部分 学会组织信息" />
+
 # 文件、文本与数据
 
 <div class="part-intro">

@@ -2,6 +2,8 @@
 title: 第12章 从Chatbot到Agent：AI产品形态如何演化
 ---
 
+<img src="/images/chapter_cover6.png" class="chapter-cover" alt="第六部分 学会使用工具" />
+
 # 从Chatbot到Agent
 
 <div class="part-intro">

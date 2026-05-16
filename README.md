@@ -11,7 +11,7 @@
 [![Content License](https://img.shields.io/badge/Content-CC%20BY--NC--ND%204.0-%23B98945)](LICENSE-CONTENT)
 [![Code License](https://img.shields.io/badge/Code-MIT-%23253B36)](LICENSE)
 
-[**在线阅读**](https://hyyhf.github.io/ai-competency-book/) · [**开始阅读**](https://hyyhf.github.io/ai-competency-book/preface) · [**提交反馈**](https://github.com/hyyhf/ai-competency-book/issues)
+[**在线阅读**](https://hyyhf.github.io/ai-competency-book/) · [**提交反馈**](https://github.com/hyyhf/ai-competency-book/issues)
 
 </div>
 

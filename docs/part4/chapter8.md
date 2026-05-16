@@ -2,6 +2,8 @@
 title: 第8章 审美、品味与判断力：AI时代的价值转移
 ---
 
+<img src="/images/chapter_cover4.png" class="chapter-cover" alt="第四部分 学习AI的思维方式" />
+
 # 审美、品味与判断力
 
 <div class="part-intro">
